@@ -1,0 +1,52 @@
+<html lang="en" style='width:500px;'>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head>
+<script>
+    function api(){
+    var ad = document.getElementById("userinput").value;
+    var apiurl = "https://wdmcs.instructure.com/api/v1/courses/?access_token=" + ad + "&per_page=100"
+    //document.write("(Lets me gain access to user's various canvas information.) " + apiurl)
+    document.write("Here you can find all of your classes: " + apiurl)
+    }
+</script>
+<body style="background-color: orange;">
+
+    <h1>Enter Personal Canvas Access Token</h1>
+    <p><b>1. Log-In to Canvas</b></p>
+    <p><b>2. Go to Profile and then click "settings"</b></p>
+    <p><b>3. Scroll Down until you see "New Access Token" and then click the blue button</b></p>
+    <p><b>4. In the purpose bar type, "Extension" and then click "Generate Token"</b></p>
+    <p><b>5. Copy the first line of the "Token:" row</b></p>   
+    <p><b>6. Paste into box below</b></p>
+
+    </body>
+<body>
+    <h1><b>Access Token:</b></h1>
+    
+</body>
+<input id = "userinput"> <br><br>
+
+    <button onclick = "api()">Go!</button>
+<script>
+
+
+//function httpGet(theUrl)
+
+$.ajax({
+url: 'http://wdmcs.instructure.com/api/v1/courses/?access_token=7876~RHIYjYZ6py6OazfxZ7eRq26xMxffCFYQKSzBLFwUkkaNwL0Gr4f2oZTTX07ejVjZ&per_page=100',
+type: 'GET',
+beforeSend: function (xhr) {
+    xhr.setRequestHeader('Authorization', 'Bearer 7876~RHIYjYZ6py6OazfxZ7eRq26xMxffCFYQKSzBLFwUkkaNwL0Gr4f2oZTTX07ejVjZ');
+},
+data: {},
+success: function () { },
+error: function () { },
+});
+
+
+</script>
+
+<script src="canvastoken.js"></script>
+
+</html>
